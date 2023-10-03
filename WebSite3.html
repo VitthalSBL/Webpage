@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University WebSite Design -Easy Tutorial</title>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+        integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .header {
+            min-height: 180vh;
+            width: 100%;
+            background-image: url(eduford_img/banner.png);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+
+        }
+
+        nav {
+            display: flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        nav img {
+            width: 150px;
+            transition: 2s;
+            
+        }
+        nav img:hover{
+            height: 70px;
+            width: 180px;
+
+        }
+        .nav-links {
+            flex: 1;
+            text-align: center;
+           
+            justify-content: space-between;
+            display: flex;
+            margin-left: 70px;
+            transition: 2s;
+
+        }
+        .nav-links:hover{
+            background-color: #00a5a8;
+            
+        }
+
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+
+        .nav-links ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 2s;
+            margin-right: 22px;
+
+        }
+        .nav-links ul li a:hover{
+            font-size: 22px;
+            font-weight: 900;
+            font-style: italic;
+
+        }
+
+
+        .nav-links ul li::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        .nav-links ul li:hover::after {
+
+            width: 100%;
+        }
+
+        .text-box {
+            width: 90%;
+            color: #fff;
+            position:relative;
+            top: 100px;
+          
+            left: 50px;
+            padding: 12px 22px;
+
+            
+            text-align: center;
+        }
+
+        .text-box h1 {
+            font-size: 62px;
+            transition: 2s;
+        }
+        .text-box h1:hover{
+            color: rgba(0, 255, 255, 0.8);
+            font-weight: 900;
+            font-style: italic;
+        }
+
+        .text-box p {
+            margin: 14px 0 40px;
+            font-size: 18px;
+            color: #fff;
+            transition: 2s;
+
+        }
+        .text-box p:hover{
+            color: turquoise;
+            font-size: 24px;
+
+        }
+
+
+        .hero-btn {
+            display: inline-block;
+            text-decoration: none;
+            color:#fff;
+            border: 1px solid #fff;
+            padding: 12px 34px;
+            font-size: 13px;
+            background:rgb(0, 168, 137);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hero-btn:hover {
+
+            background: #f44336;
+            transition: 1s;
+        }
+
+        nav .fa {
+            display: none;
+        }
+
+        .course {
+            width: 80%;
+
+            margin: auto;
+            text-align: center;
+            padding: 100px;
+        }
+
+        .course h1 {
+            margin: 8px;
+            transition: 2s;
+            font-size: 36px;
+            font-weight: 600;
+        }
+        .course h1:hover{
+            color: turquoise;
+        }
+
+
+        .course p {
+
+            color: #777;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+            transition: 2s;
+        }
+        .course p:hover{
+            color: sandybrown;
+        }
+
+        .row {
+            margin: 5%;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .course-col {
+
+            flex-basis: 31%;
+            background: #fff3f3;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            padding: 20px 12px;
+            box-sizing: border-box;
+            transition: 2.5s;
+        }
+
+        h3 {
+            
+            text-align: center;
+            font-weight: 600;
+            margin: 18px;
+        }
+
+        .course-col:hover {
+            box-shadow: 0 0 20px 0px rgb(0, 0, 0, 8.7);
+        }
+
+        .campus {
+
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .campus-col {
+            flex-basis: 32%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .campus-col img {
+
+            width: 100%;
+            display: block;
+
+
+
+
+        }
+        .campus h1{
+            
+            margin: 8px;
+            padding: 8px;
+            transition: 2s;
+        }
+        .campus h1:hover{
+            color: rgb(0, 167, 150);
+            font-style: italic;
+            font-weight: 700;
+        }
+        .campus p{
+           
+            transition: 2s;
+        }
+        .campus p:hover{
+            color: sandybrown;
+        }
+
+        .layer {
+            background: transparent;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.5s;
+        }
+
+        .layer:hover {
+            background-color: rgba(226, 0, 0, 0.7);
+        }
+
+        .layer h1 {
+            
+            width: 100%;
+            font-weight: 500;
+            color:#fff;
+            font-size: 36px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            opacity: 0;
+            transition: 1.5s;
+    
+
+           
+
+        }
+
+        .layer:hover h1 {
+
+            bottom: 49%;
+            opacity: 1;
+        }
+
+        .facilities-col {
+            flex-basis: 31%;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            text-align: left;
+        }
+
+        .facilities-col img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .facilities-col p {
+
+            padding: 0;
+        }
+
+        .facilities-col h1 {
+
+            margin-top: 16px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        #p,
+        #h {
+            margin: 8px;
+            text-align: center;
+            transition: 2s;
+        }
+       #h:hover{
+            color: turquoise;
+        }
+        #p:hover{
+            color: salmon;
+        }
+
+        #h {
+            font-size: 26px;
+            font-weight: 600;
+
+        }
+
+        #p {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .testimonial {
+            text-align: center;
+            width: 80%;
+            margin: auto;
+            padding-top: 100px;
+        }
+        .testimonial h1{
+           
+            margin: 8px;
+            transition: 2s;
+        }
+        .testimonial h1:hover{
+            color: rgb(0, 161, 161);
+        }
+        .testimonial p:hover{
+            color: rgb(131, 0, 161);
+        }
+
+        .testimonial-col {
+
+            flex-basis: 44%;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            text-align: left;
+            background: #fff3f3;
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+
+
+        }
+
+        .testimonial-col img {
+            height: 48px;
+            margin-left: 5px;
+            margin-right: 30px;
+            border-radius: 50px;
+        }
+
+        .cta {
+            margin: auto;
+            width: 80%;
+            background-image: url(eduford_img/banner2.jpg);
+            background-position: center;
+            background-size: cover;
+            border-radius: 10px;
+            text-align: center;
+            padding: 100px 0;
+
+
+        }
+
+        .cta h1 {
+            color: #fff;
+            margin-bottom: 40px;
+            padding: 0;
+
+        }
+
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px;
+           
+
+        }
+
+        .footer h1 {
+
+            margin-top: 20px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            transition: 2s;
+        }
+        .footer h1:hover{
+            color: turquoise;
+        }
+        .footer p:hover{
+            color: violet;
+        }
+
+
+
+        @media(max-width:700px) {
+            .text-box h1 {
+                font-size: 20px;
+            }
+
+            .nav-links ul li {
+                display: block;
+            }
+
+            .nav-links {
+                transition: 2s;
+                position: absolute;
+                background: #f44336;
+                height: 100vh;
+                width: 200px;
+                top: 0;
+                right: -200px;
+                text-align: left;
+                z-index: 2;
+            }
+
+            nav .fa {
+                display: block;
+                color: #fff;
+                margin: 10px;
+                font-size: 22px;
+                cursor: pointer;
+
+            }
+
+            .row {
+                flex-direction: column;
+            }
+
+            .testimonial-col img {
+
+                margin-left: 0;
+                margin-right: 15px;
+                border-radius: 50px;
+            }
+
+            .ctn h1 {
+                font-size: 24px;
+            }
+        }
+       
+    </style>
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="#" id="A"><img src="eduford_img/logo.png" alt=""></a>
+            <div class="nav-links" id="navLinks">
+          
+            
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Course</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+         
+
+        </nav>
+        <div class="text-box">
+            <h1>Welcome World biggest University</h1>
+            <p>Making WebSite is now one of the easiest thing in the world.You just need to learn html,Css, <br>
+                Javascript and you are good to go</p>
+            <a href="#" class="hero-btn">Visit Us To Know More</a>
+        </div>
+
+
+    </section>
+    <section class="course">
+        <h1>Courses we Offer</h1>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+        <div class="row">
+            <div class="course-col">
+                <h>Intermediate</h>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam autem debitis odit provident nostrum,
+                    inventore quibusdam veniam ad nemo architecto accusamus reiciendis.</p>
+            </div>
+
+            <div class="course-col">
+                <h2>Degree</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam autem debitis odit provident nostrum,
+                    inventore quibusdam veniam ad nemo architecto accusamus reiciendis.</p>
+
+            </div>
+
+            <div class="course-col">
+                <h3>Post-Graduation</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam autem debitis odit provident nostrum,
+                    inventore quibusdam veniam ad nemo architecto accusamus reiciendis.</p>
+            </div>
+        </div>
+
+
+
+    </section>
+    <section class="campus">
+        <h1>Our Global Campus</h1>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        <div class="row">
+            <div class="campus-col">
+                <img src="eduford_img/london.png" alt="">
+                <div class="layer">
+                    <h1> London </h1>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="eduford_img/newyork.png" alt="">
+                <div class="layer">
+                    <h1> New York </h1>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="eduford_img/washington.png" alt="">
+                <div class="layer">
+                    <h1> Washington </h1>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </section>
+    <section class="facilities">
+        <h1 id="h">Our Facilities</h1>
+        <p id="p">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        <div class="row">
+            <div class="facilities-col">
+                <img src="eduford_img/library.png" alt="">
+                <h1>World Class Library</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium in eligendi error explicabo
+                    possimus molestiae neque dignissimos libero laudantium repellat, amet officia.</p>
+            </div>
+            <div class="facilities-col">
+                <img src="eduford_img/basketball.png" alt="">
+                <h1>Largest BasketBall Ground</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium in eligendi error explicabo
+                    possimus molestiae neque dignissimos libero laudantium repellat, amet officia.</p>
+            </div>
+            <div class="facilities-col">
+                <img src="eduford_img/cafeteria.png" alt="">
+                <h1>Healthy and Tasty Food</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium in eligendi error explicabo
+                    possimus molestiae neque dignissimos libero laudantium repellat, amet officia.</p>
+            </div>
+        </div>
+
+    </section>
+    <section class="testimonial">
+        <h1>What Our Students Says</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        <div class="row">
+
+            <div class="testimonial-col">
+                <img src="eduford_img/user1.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia dolor placeat repellat.</p>
+                <h1>Lingua Marina</h1>
+            </div>
+            <div class="testimonial-col">
+                <img src="eduford_img/user2.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia dolor placeat repellat.</p>
+                <h1>Peter Pakers</h1>
+
+            </div>
+
+
+        </div>
+        </div>
+
+        </div>
+    </section>
+    <section class="cta">
+        <h1>Enroll For Our Various Online Courses <br> Anywhere From The World</h1>
+
+        <a href="/" class="hero-btn">Contact Us</a>
+
+
+    </section>
+    <section class="footer">
+        <h1>About</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique sit expedita quae? </p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+    </section>
+
+   
+</body>
+
+</html>
